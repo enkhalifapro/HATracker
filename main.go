@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"github.com/enkhalifapro/HATracker/DB"
 	"github.com/enkhalifapro/HATracker/controllers"
 	"net/http"
 	"github.com/labstack/echo"
@@ -12,7 +13,10 @@ func main() {
 	// router config
 	r := echo.New()
 
-	r.POST("/signup", controllers.Signup)
+	userCtrl := &controllers.UserCtrl{
+		DB: &DB.PostgresHelper{},
+	}
+	r.POST("/signup", userCtrl.Signup)
 
 	r.GET("/v", func(c echo.Context) error {
 

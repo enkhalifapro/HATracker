@@ -16,7 +16,7 @@ type UserCtrl struct {
 
 func (s *UserCtrl) Signup(c echo.Context) error {
 	defer c.Request().Body.Close()
-	user := models.User{}
+	user := &models.User{}
 	err := json.NewDecoder(c.Request().Body).Decode(user)
 	if err != nil {
 		log.Printf("Faild Proccessing User Data: %s", err)
