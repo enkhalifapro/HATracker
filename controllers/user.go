@@ -3,8 +3,8 @@ package controllers
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/enkhalifapro/HATracker/DB"
-	"github.com/enkhalifapro/HATracker/models"
+	"HATracker/DB"
+	"HATracker/models"
 	"github.com/labstack/echo"
 	"log"
 	"net/http"

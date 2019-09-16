@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/enkhalifapro/HATracker/DB"
-	"github.com/enkhalifapro/HATracker/controllers"
+	"HATracker/DB"
+	"HATracker/controllers"
 	"net/http"
 	"github.com/labstack/echo"
 )
