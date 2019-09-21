@@ -3,6 +3,7 @@ package main
 import (
 	"HATracker/DB"
 	"HATracker/controllers"
+	"HATracker/services"
 
 	"github.com/labstack/echo"
 )
@@ -13,7 +14,9 @@ func main() {
 	r := echo.New()
 
 	userCtrl := &controllers.UserCtrl{
-		Database: &DB.PostgresHelper{},
+		Service: &services.UserService{
+			Database: &DB.PostgresHelper{},
+		},
 	}
 
 	r.POST("/signup", userCtrl.Signup)
